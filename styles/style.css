@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* ::selection {
+  background-color: #F88DD5;
+  color: #8A69D4;
+}
+
+body {
+  background-color: #CDC5F6;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fade-to-center 1s forwards 1.7s;
+}
+
+/* * * * HEADER * * * */
+header {
+  padding: 3rem;
+  position: relative;
+  animation: 600ms ease-in-out 0s slide-in forwards;
+  opacity: 0;
+}
+header .header-left {
+  color: black;
+  text-decoration: none;
+  display: flex;
+}
+header .header-left ::selection {
+  background-color: #02BEFE;
+  color: #FFBE12;
+}
+header .header-left h1 {
+  font-family: gambado-sans-forte, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  transition: all 0.4s;
+}
+header .header-left h1:hover {
+  background-color: #F88DD5;
+}
+header .header-left img {
+  width: 2rem;
+  margin-right: 1rem;
+  user-select: none;
+}
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  position: relative;
+}
+#intro div.intro-msg {
+  text-align: center;
+}
+#intro div.intro-msg h1 {
+  font: normal 600 4vw/1.5 "Montserrat", sans-serif;
+  animation: move-text 0.5s forwards;
+  opacity: 0;
+  position: relative;
+}
+#intro div.intro-msg h1 .intro-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  color: #8A69D4;
+}
+#intro div.intro-msg h1 .intro-name span {
+  animation: move-text 0.5s forwards;
+  opacity: 0;
+  position: relative;
+}
+#intro div.intro-msg h2 {
+  animation: move-text 0.9s forwards;
+  opacity: 0;
+  position: relative;
+}
+#intro div.intro-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#intro div.intro-btn ul {
+  display: flex;
+  animation: move-text 1.2s forwards;
+  opacity: 0;
+  position: relative;
+}
+#intro div.intro-btn ul li {
+  padding: 1rem;
+  list-style: none;
+  margin-top: 16px;
+}
+#intro div.intro-btn ul li a {
+  color: black;
+  background-color: white;
+  padding: 0.5rem;
+  box-shadow: 8px 8px 0 1px #FFBE12;
+  border-radius: 8px;
+  border: 1px solid black;
+  text-decoration: none;
+  transition: 0.4s;
+  user-select: none;
+}
+#intro div.intro-btn ul li a:hover {
+  box-shadow: 12px 12px 0 1px #00C69F;
+}
+
+/* * * * KEYFRAMES * * * */
+@keyframes move-text {
+  0% {
+    bottom: -0.6em;
+    opacity: 0;
+  }
+  50% {
+    bottom: 0.6em;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-to-center {
+  from {
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* * * * PROJECTS PAGE * * * */
+
+/*# sourceMappingURL=style.css.map */

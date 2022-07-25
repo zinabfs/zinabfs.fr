@@ -1,0 +1,184 @@
+$purple: #8A69D4;
+$yellow: #FFBE12;
+$blue: #02BEFE;
+$pink: #F88DD5;
+$turquoise: #00C69F;
+$red: #FB4D44;
+
+
+
+@mixin slide($duration, $offset) {
+  animation: $duration ease-in-out $offset slide-in forwards;
+  opacity: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  ::selection {
+    background-color: $pink;
+    color: $purple;
+  }
+}
+
+body {
+  background-color: #CDC5F6;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fade-to-center 1s  forwards 1.7s;
+}
+
+/* * * * HEADER * * * */
+header{
+  padding: 3rem;
+  position: relative;
+  @include slide(600ms, 0s);
+
+  .header-left{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    ::selection {
+      background-color: $blue;
+      color: $yellow;
+    }
+    h1{
+        font-family: gambado-sans-forte, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.5rem;
+        transition: all .4s;
+        &:hover{
+          background-color: $pink;
+        }
+    }
+    img{
+      width: 2rem;
+      margin-right: 1rem;
+      user-select: none;
+    }
+  }
+}
+
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  position: relative;
+
+  div.intro-msg {
+    text-align: center;
+
+    h1 {
+      font: normal 600 4vw/1.5 'Montserrat', sans-serif;
+      animation: move-text .5s forwards;
+      opacity: 0;
+      position: relative;
+
+      .intro-name {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 800;
+        color: $purple;
+
+        span {
+          animation: move-text .5s forwards;
+          opacity: 0;
+          position: relative;
+
+        }
+      }
+    }
+
+    h2 {
+      animation: move-text .9s forwards;
+      opacity: 0;
+      position: relative;
+    }
+  }
+
+  div.intro-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+      animation: move-text 1.2s forwards;
+      opacity: 0;
+      position: relative;
+
+      li {
+        padding: 1rem;
+        list-style: none;
+        margin-top: 16px;
+
+        a {
+          color: black;
+          background-color: white;
+          padding: .5rem;
+          box-shadow: 8px 8px 0 1px $yellow;
+          border-radius: 8px;
+          border: 1px solid black;
+          text-decoration: none;
+          transition: .4s;
+          user-select: none;
+
+          &:hover {
+            box-shadow: 12px 12px 0 1px $turquoise;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* * * * KEYFRAMES * * * */
+
+@keyframes move-text {
+  0% {
+    bottom: -0.6em;
+    opacity: 0;
+  }
+
+  50% {
+    bottom: 0.6em;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-to-center {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* * * * PROJECTS PAGE * * * */
+//@import 'projects.scss';
